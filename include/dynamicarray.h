@@ -10,6 +10,8 @@ typedef struct DynamicArray {
     size_t capacity;
 } DynamicArray;
 
+DynamicArray create_new_dynamic_array(void);
+
 void init_array(DynamicArray *arr, size_t ini_cap);
 
 void resize_arr(DynamicArray *arr, size_t new_cap);

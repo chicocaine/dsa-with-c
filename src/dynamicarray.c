@@ -7,6 +7,14 @@ typedef struct DynamicArray {
     size_t capacity;
 } DynamicArray;
 
+DynamicArray create_new_dynamic_array(void) {
+    return (DynamicArray) {
+        .data = malloc(2 * sizeof(void*)),
+        .capacity = 2,
+        .size = 0
+    };
+}
+
 void init_array(DynamicArray *arr, size_t ini_cap) {
     arr->data = malloc(ini_cap * sizeof(void*));
     arr->size = 0;
@@ -37,12 +45,9 @@ void* remove_back(DynamicArray *arr) {
 }
 
 void free_array(DynamicArray *arr, void (*free_fn)(void*)) {
-    for (int i = 0; i < arr->size; i++) {
+    for (size_t i = 0; i < arr->size; i++) {
         if(free_fn) {
             free_fn(arr->data[i]);
-        } else {
-            fprintf(stderr, "Error: Invalid free_fn.");
-            exit(1);
         }
     }
     free(arr->data);
