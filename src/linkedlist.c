@@ -14,6 +14,20 @@ struct Node {
     Node* nxt;
 };
 
+LinkedList create_linked_list(void) {
+    return (LinkedList) {
+        .head = NULL,
+        .tail = NULL,
+        .length = 0
+    };
+}
+
+void init_linked_list(LinkedList *list) {
+    list->head = NULL;
+    list->tail = NULL;
+    list->length = 0;
+}
+
 void insert_end(LinkedList* list, void* data) {
     Node* new_node = malloc(sizeof(Node));
     new_node->data = data;
@@ -135,7 +149,7 @@ void free_list(LinkedList* list, void (*free_fn)(void*)) {
     while (current != NULL) {
         Node* next = current->nxt;
 
-        if (free_fn != NULL) free_fn(current->data);
+        if (free_fn) free_fn(current->data);
 
         free(current);
         current = next;

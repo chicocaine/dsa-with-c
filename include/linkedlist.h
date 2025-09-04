@@ -17,6 +17,9 @@ struct Node {
     Node* nxt;
 };
 
+LinkedList create_linked_list(void);
+void init_linked_list(LinkedList *list);
+
 void insert_end(LinkedList* list, void* data);
 void insert_at(LinkedList* list, void* data, const int pos);
 
