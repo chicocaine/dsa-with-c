@@ -8,6 +8,8 @@ typedef struct Stack {
     DynamicArray arr;
 } Stack;
 
+Stack create_new_stack(void);
+
 void init_stack(Stack *stack, size_t ini_cap);
 
 void push(Stack *stack, void *data);

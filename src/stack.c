@@ -5,6 +5,10 @@ typedef struct Stack {
     DynamicArray arr;
 } Stack;
 
+Stack create_new_stack(void) {
+    return (Stack) {.arr.data = malloc(2 * sizeof(void*)), .arr.capacity = 2, .arr.size = 0};
+}
+
 void init_stack(Stack *stack, size_t ini_cap) {
     init_array(&stack->arr, ini_cap);
 }
