@@ -12,6 +12,7 @@ set(SOURCES
     src/linkedlist.c
     src/stack.c
     src/dynamicarray.c
+    src/queue_linkedlist.c
 )
 add_executable(my_program ${SOURCES})
 
