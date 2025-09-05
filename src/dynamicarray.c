@@ -9,20 +9,27 @@ typedef struct DynamicArray {
 
 DynamicArray create_new_dynamic_array(void) {
     return (DynamicArray) {
-        .data = malloc(2 * sizeof(void*)),
+        .data = calloc(2,  sizeof(void*)),
         .capacity = 2,
         .size = 0
     };
 }
 
 void init_array(DynamicArray *arr, size_t ini_cap) {
-    arr->data = malloc(ini_cap * sizeof(void*));
+    arr->data = calloc(ini_cap, sizeof(void*));
     arr->size = 0;
     arr->capacity = ini_cap;
 }
 
 void resize_arr(DynamicArray *arr, size_t new_cap) {
-    arr->data = realloc(arr->data, new_cap * sizeof(void*));
+    size_t old_cap = arr->capacity;
+    void **tmp = realloc(arr->data, new_cap * sizeof(void*));
+    if (!tmp) {
+        perror("realloc failed");
+        exit(EXIT_FAILURE);
+    }
+    arr->data = tmp;
+    for (size_t i = old_cap; i < new_cap; i++) arr->data[i] = NULL;
     arr->capacity = new_cap;
 }
 
