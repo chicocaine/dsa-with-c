@@ -5,22 +5,22 @@
 #include <stdio.h>
 #include "linkedlist.h"
 
-typedef struct Queue {
+typedef struct Queue_ll_ll {
     LinkedList list;
-} Queue;
+} Queue_ll;
 
-Queue create_new_queue(void);
+Queue_ll create_queue_ll(void);
 
-void init_queue(Queue *queue);
+void init_queue_ll(Queue_ll *queue);
 
-void enqueue(Queue *queue, void *data);
+void enqueue_ll(Queue_ll *queue, void *data);
 
-void* dequeue(Queue *queue);
+void* dequeue_ll(Queue_ll *queue);
 
-void* queue_top(Queue *queue);
+void* queue_top(Queue_ll *queue);
 
-void* queue_bottom(Queue *queue);
+void* queue_bottom(Queue_ll *queue);
 
-void free_queue(Queue *queue, void (*free_fn)(void*));
+void free_queue_ll(Queue_ll *queue, void (*free_fn)(void*));
 
 #endif

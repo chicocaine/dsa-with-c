@@ -4,12 +4,12 @@
 
 // queue implementation with linked list
 
-typedef struct Queue {
+typedef struct Queue_ll {
     LinkedList list;
-} Queue;
+} Queue_ll;
 
-Queue create_new_queue(void) {
-    return (Queue) { 
+Queue_ll create_queue_ll(void) {
+    return (Queue_ll) { 
         .list = { 
             .head = NULL, 
             .tail = NULL, 
@@ -18,17 +18,17 @@ Queue create_new_queue(void) {
     };
 }
 
-void init_queue(Queue *queue) {
+void init_queue_ll(Queue_ll *queue) {
     queue->list.head = NULL;
     queue->list.tail = NULL;
     queue->list.length = 0;
 }
 
-void enqueue(Queue *queue, void *data) {
+void enqueue_ll(Queue_ll *queue, void *data) {
     insert_at(&queue->list, data, 0);
 }
 
-void* dequeue(Queue *queue) {
+void* dequeue_ll(Queue_ll *queue) {
     if (queue->list.length == 0) {
         fprintf(stderr, "Error: Cannot dequeue an empty queue.");
         exit(1);
@@ -36,7 +36,7 @@ void* dequeue(Queue *queue) {
     return remove_end(&queue->list);
 }
 
-void* queue_top(Queue *queue) {
+void* queue_top(Queue_ll *queue) {
     if (queue->list.length == 0) {
         fprintf(stderr, "Error: Cannot queue_top an empty queue.");
         exit(1);
@@ -44,7 +44,7 @@ void* queue_top(Queue *queue) {
     return get_at(&queue->list, 0);
 }
 
-void* queue_bottom(Queue *queue) {
+void* queue_bottom(Queue_ll *queue) {
     if (queue->list.length == 0) {
         fprintf(stderr, "Error: Cannot queue_bottom an empty queue.");
         exit(1);
@@ -52,6 +52,6 @@ void* queue_bottom(Queue *queue) {
     return get_at(&queue->list, queue->list.length-1);
 }
 
-void free_queue(Queue *queue, void (*free_fn)(void*)) {
+void free_queue_ll(Queue_ll *queue, void (*free_fn)(void*)) {
     free_list(&queue->list, free_fn);
 }

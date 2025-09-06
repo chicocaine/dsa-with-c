@@ -13,14 +13,15 @@ set(SOURCES
     src/stack.c
     src/dynamicarray.c
     src/queue_linkedlist.c
+    src/queue.c
 )
 add_executable(my_program ${SOURCES})
 
-enable_testing()
-add_executable(linkedlist_test 
-    tests/linkedlist_test.c
-    src/linkedlist.c
-)
-target_include_directories(linkedlist_test PRIVATE include)
+# enable_testing()
+# add_executable(linkedlist_test 
+#     tests/linkedlist_test.c
+#     src/linkedlist.c
+# )
+# target_include_directories(linkedlist_test PRIVATE include)
 
 add_test(NAME LinkedListTests COMMAND linkedlist_test)
