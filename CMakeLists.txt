@@ -14,6 +14,7 @@ set(SOURCES
     src/dynamicarray.c
     src/queue_linkedlist.c
     src/queue.c
+    src/hashtable.c
 )
 add_executable(my_program ${SOURCES})
 
