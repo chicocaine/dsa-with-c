@@ -10,12 +10,20 @@ int main() {
 
     HashTable hashy = create_hashtable(10);
 
-    insert(&hashy, "Mark", 21);
-    insert(&hashy, "Sofia", 20);
-    insert(&hashy, "Terry", 12);
+    insert(&hashy, "Mark", make_int(21), free_int);
+    insert(&hashy, "Sofia", make_int(22), free_int);
+    insert(&hashy, "Terry", make_int(12), free_int);
 
-    int *x = get(&hashy, "Terry");
+    int *x = (int*)get(&hashy, "Terry");
     printf("Terry is %d years old.\n", *x);
+    insert(&hashy, "Terry", make_int(13), free_int);
+    x = (int*)get(&hashy, "Terry");
+    printf("Terry is %d years old.\n", *x);
+
+    delete(&hashy, "Sofia", free_int);
+    if (get(&hashy, "Sofia") == NULL) printf("Key successfully removed.\n");
+
+    free_table(&hashy, free_int);
     return 0;
 }
 
