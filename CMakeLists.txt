@@ -9,12 +9,12 @@ include_directories(include)
 # main program
 set(SOURCES
     src/main.c
-    src/linkedlist.c
-    src/stack.c
-    src/dynamicarray.c
-    src/queue_linkedlist.c
-    src/queue.c
-    src/hashtable.c
+    src/basic_data_structures/linkedlist.c
+    src/basic_data_structures/stack.c
+    src/basic_data_structures/dynamicarray.c
+    src/basic_data_structures/queue_linkedlist.c
+    src/basic_data_structures/queue.c
+    src/basic_data_structures/hashtable.c
 )
 add_executable(my_program ${SOURCES})
 

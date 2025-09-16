@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "dynamicarray.h"
+#include "basic_data_structures_h/dynamicarray.h"
 
 typedef struct Stack {
     DynamicArray arr;

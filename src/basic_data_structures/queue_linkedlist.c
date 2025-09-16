@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "linkedlist.h"
+#include "basic_data_structures_h/linkedlist.h"
 
 // queue implementation with linked list
 
