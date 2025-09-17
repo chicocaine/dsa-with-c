@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "hashtable.h"
+#include "basic_data_structures_h/hashtable.h"
 
 int* make_int(int value);
 void free_int(void *data);
@@ -10,9 +10,9 @@ int main() {
 
     HashTable hashy = create_hashtable(10);
 
-    insert(&hashy, "Mark", 21);
-    insert(&hashy, "Sofia", 20);
-    insert(&hashy, "Terry", 12);
+    insert(&hashy, "Mark", make_int(21), free_int);
+    insert(&hashy, "Sofia", make_int(20), free_int);
+    insert(&hashy, "Terry", make_int(12), free_int);
 
     int *x = get(&hashy, "Terry");
     printf("Terry is %d years old.\n", *x);

@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "basic_data_structures_h/hashtable.h"
+#include "util_h/util.h"
+#include "sorting_algorithms/bubblesort.h"
+#include "sorting_algorithms/insertionsort.h"
 
 int* make_int(int value);
 void free_int(void *data);
@@ -8,23 +10,13 @@ void print_int(void *data);
 
 int main() {
 
-    HashTable hashy = create_hashtable(10);
-
-    insert(&hashy, "Mark", make_int(21), free_int);
-    insert(&hashy, "Sofia", make_int(22), free_int);
-    insert(&hashy, "Terry", make_int(12), free_int);
-
-    int *x = (int*)get(&hashy, "Terry");
-    printf("Terry is %d years old.\n", *x);
-    insert(&hashy, "Terry", make_int(13), free_int);
-    x = (int*)get(&hashy, "Terry");
-    printf("Terry is %d years old.\n", *x);
-
-    delete(&hashy, "Sofia", free_int);
-    if (get(&hashy, "Sofia") == NULL) printf("Key successfully removed.\n");
-
-    free_table(&hashy, free_int);
-    return 0;
+    int arr[10];
+    fill_int_arr_rand(arr, 10, 0, 10);
+    
+    print_int_arr(arr, 10);
+    insertion_sort(arr, 10);
+    print_int_arr(arr, 10);
+    
 }
 
 int* make_int(int value) {
