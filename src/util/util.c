@@ -23,7 +23,7 @@ void print_int_arr(int *arr, size_t arrlen) {
         return;
     }
 
-    printf("[ ");
+    printf("[");
     for (size_t i = 0; i < arrlen; i++) {
         printf(" %d", arr[i]);
         if (i < arrlen - 1) printf(",");

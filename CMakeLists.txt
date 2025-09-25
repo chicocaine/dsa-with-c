@@ -18,6 +18,7 @@ set(SOURCES
     src/basic_data_structures/hashtable.c
     src/sorting_algorithms/bubblesort.c
     src/sorting_algorithms/insertionsort.c
+    src/sorting_algorithms/mergesort.c
 )
 add_executable(my_program ${SOURCES})
 
