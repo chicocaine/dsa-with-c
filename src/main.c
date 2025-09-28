@@ -1,9 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include "util_h/util.h"
 #include "sorting_algorithms/bubblesort.h"
 #include "sorting_algorithms/insertionsort.h"
 #include "sorting_algorithms/mergesort.h"
+#include "sorting_algorithms/quicksort.h"
 
 int* make_int(int value);
 void free_int(void *data);
@@ -11,12 +13,14 @@ void print_int(void *data);
 
 int main() {
 
+    srand(time(NULL));
+
     int arr[20];
-    int n = 20;
     fill_int_arr_rand(arr, 20, 0, 50);
+    int n = sizeof(arr) / sizeof(arr[0]);
 
     print_int_arr(arr, 20);
-    mergesort(arr, 0, n - 1);
+    quicksort(arr, 0, n - 1);
     print_int_arr(arr, 20);
     
 }

@@ -19,6 +19,7 @@ set(SOURCES
     src/sorting_algorithms/bubblesort.c
     src/sorting_algorithms/insertionsort.c
     src/sorting_algorithms/mergesort.c
+    src/sorting_algorithms/quicksort.c
 )
 add_executable(my_program ${SOURCES})
 
