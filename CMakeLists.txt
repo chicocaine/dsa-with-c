@@ -21,6 +21,7 @@ set(SOURCES
     src/sorting_algorithms/mergesort.c
     src/sorting_algorithms/quicksort.c
     src/sorting_algorithms/selectionsort.c
+    src/sorting_algorithms/heapsort.c
 )
 add_executable(my_program ${SOURCES})
 

@@ -7,6 +7,7 @@
 #include "sorting_algorithms/mergesort.h"
 #include "sorting_algorithms/quicksort.h"
 #include "sorting_algorithms/selectionsort.h"
+#include "sorting_algorithms/heapsort.h"
 
 int* make_int(int value);
 void free_int(void *data);
@@ -21,7 +22,7 @@ int main() {
     int n = sizeof(arr) / sizeof(arr[0]);
 
     print_int_arr(arr, 20);
-    selectionsort(arr, 20);
+    heapsort(arr, 20);
     print_int_arr(arr, 20);
     
 }
