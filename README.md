@@ -3,14 +3,6 @@
 A collection of data structures and algorithms implemented in **C** as part of my learning journey.  
 This repository serves as a personal reference and practice space for understanding core concepts of **DSA** and improving my **C programming** skills.
 
-## 📚 Contents
-
-Currently includes:
-
-- **Linked Lists**
-- **Dynamic Array**
-- **Stacks**
-
 ## 🚀 Getting Started
 
 1. Clone the repository:
