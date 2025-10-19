@@ -20,6 +20,12 @@ void enqueue(Queue *queue, void *data);
 
 void* dequeue(Queue *queue);
 
+void *peek(Queue *queue);
+
+int is_empty(Queue *queue);
+
+int is_full(Queue *queue);
+
 void free_queue(Queue *queue, void (*free_fn)(void*));
 
 void print_queue(Queue *queue, void (*print_fn)(void*));

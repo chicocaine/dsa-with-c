@@ -53,6 +53,18 @@ void* dequeue(Queue *queue) {
     return data;
 }
 
+void *peek(Queue *queue) {
+    return queue->data[queue->head];
+}
+
+int is_empty(Queue *queue) {
+    return queue->head == queue->tail;
+}
+
+int is_full(Queue *queue) {
+    return ((queue->tail + 1) % queue->size) == queue->head;
+}
+
 void print_queue(Queue *queue, void (*print_fn)(void*)) {
     if (queue->size == 0) {
         printf("[ ]\n");
